@@ -1,4 +1,4 @@
-require('babel/polyfill');
+require('babel/polyfill')
 
 const environment = {
   development: {
@@ -7,33 +7,28 @@ const environment = {
   production: {
     isProduction: true
   }
-}[process.env.NODE_ENV || 'development'];
+}[process.env.NODE_ENV || 'development']
+
+const titleText = 'hackreact web'
+const descText = titleText + ' - kickoff'
 
 module.exports = Object.assign({
   host: process.env.HOST || 'localhost',
   port: process.env.PORT,
   apiHost: process.env.APIHOST || 'localhost',
-  apiPort: process.env.APIPORT,
+  apiPort: process.env.APIPORT || 5000,
   app: {
-    title: 'React Redux Example',
-    description: 'All the modern best practices in one example.',
+    title: titleText,
+    description: descText,
     meta: {
       charSet: 'utf-8',
       property: {
-        'og:site_name': 'React Redux Example',
-        'og:image': 'https://react-redux.herokuapp.com/logo.jpg',
-        'og:locale': 'en_US',
-        'og:title': 'React Redux Example',
-        'og:description': 'All the modern best practices in one example.',
-        'twitter:card': 'summary',
-        'twitter:site': '@erikras',
-        'twitter:creator': '@erikras',
-        'twitter:title': 'React Redux Example',
-        'twitter:description': 'All the modern best practices in one example.',
-        'twitter:image': 'https://react-redux.herokuapp.com/logo.jpg',
-        'twitter:image:width': '200',
-        'twitter:image:height': '200'
+        'og:site_name': titleText,
+        'og:locale': 'de_DE'
       }
     }
+  },
+  sendbird: {
+    app_id: process.env.SENDBIRD_APP_ID
   }
-}, environment);
+}, environment)

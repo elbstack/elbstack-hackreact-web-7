@@ -1,3 +1,10 @@
 webpack/*
 karma.conf.js
 tests.webpack.js
+
+# from http://www.kirupa.com/html5/get_element_position_using_javascript.htm
+src/utils/elementPosition.js
+
+# from https://gist.github.com/james2doyle/5694700
+src/utils/scrollTo.js
+

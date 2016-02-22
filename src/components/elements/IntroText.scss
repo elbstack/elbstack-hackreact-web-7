@@ -1,0 +1,13 @@
+@import "../../theme/variables";
+
+.intro {
+  color: $text-light;
+}
+.heading {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  padding: 0 0 75px 0;
+  background: url('../../../static/images/img-empty.svg') bottom center no-repeat;
+}

@@ -1,0 +1,30 @@
+@import "../../theme/variables";
+
+.loginName {
+  padding: 12px 5px 12px 40px;
+  border: 2px solid white;
+  border-radius: 2px;
+  background: white url('../../../static/images/icon-username-landing.svg') 8px center no-repeat;
+  color: $text-dark;
+
+  &:focus,
+  &:hover {
+    border-color: $brand-primary;
+  }
+}
+
+.enter {
+  cursor: pointer;
+  display: inline-block;
+  background: $brand-primary;
+  color: white;
+  padding: 14px 27px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin: 0 0 0 1em;
+  font-weight: bold;
+
+  &:hover {
+    background: $brand-secondary;
+  }
+}

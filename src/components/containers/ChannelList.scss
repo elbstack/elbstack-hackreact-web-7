@@ -1,0 +1,25 @@
+@import "../../theme/variables";
+
+.container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+.list {
+  background: $background-light;
+  width: 200px;
+  height: 100%;
+  padding: 15px 0 0 0;
+}
+.item {
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+    background: $background-light-secondary;
+  }
+}

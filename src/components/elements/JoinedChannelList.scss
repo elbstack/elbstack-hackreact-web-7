@@ -1,0 +1,8 @@
+@import "../../theme/variables";
+
+.container {
+  margin: 1em;
+  padding: 1em;
+  border: 1px dashed $base-color;
+  border-radius: 3px;
+}

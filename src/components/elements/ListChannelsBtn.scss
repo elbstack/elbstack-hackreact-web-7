@@ -1,0 +1,22 @@
+@import "../../theme/variables";
+
+.button {
+  display: inline-block;
+  color: white;
+  background: $brand-primary;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+    background-color: $brand-secondary;
+  }
+}
+.icon {
+  vertical-align: middle;
+  display: inline-block;
+  float: right;
+  background: url('../../../static/images/btn-openchat-normal.svg') center center no-repeat;
+  width: 20px;
+  height: 20px;
+}

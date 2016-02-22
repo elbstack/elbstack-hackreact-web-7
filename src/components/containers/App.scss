@@ -1,0 +1,28 @@
+@import "../../theme/variables";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+:global(html) {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+:global(body) {
+  overflow: hidden;
+  font-family: $font-family-sans-serif;
+  height: 100%;
+  background: $base-color;
+}
+:global(input:focus) {
+  outline: none;
+}
+a {
+  cursor: pointer;
+  color: inherit;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: $text-color;
+  }
+}
