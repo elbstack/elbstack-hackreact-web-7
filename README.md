@@ -13,6 +13,26 @@ Add SENDBIRD_APP_ID to your env (depends on the shell) e.g. `export SENDBIRD_APP
 
 Run development server with `npm run dev`
 
+## exercise mockups
+
+**exercise 1**
+![Exercise 1](/docs/mockups/E1.png?raw=true)
+
+**exercise 2**
+![Exercise 2](/docs/mockups/E2.png?raw=true)
+
+**exercise 3**
+![Exercise 3](/docs/mockups/E3.png?raw=true)
+
+**exercise 4**
+![Exercise 4](/docs/mockups/E4.png?raw=true)
+
+**exercise 5**
+![Exercise 5](/docs/mockups/E5.png?raw=true)
+
+**exercise 6**
+![Exercise 6](/docs/mockups/E6.png?raw=true)
+
 ---
 
 # React Redux Universal Hot Example
