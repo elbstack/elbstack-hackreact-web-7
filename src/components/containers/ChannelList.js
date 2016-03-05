@@ -1,20 +1,28 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styles from './ChannelList.scss'
+import ChannelListItem from '../elements/ChannelListItem'
 import { listChannels } from '../../redux/actions/channels'
+import { joinedChannel } from '../../redux/actions/joined'
 
 @connect(
   state => ({
     channels: state.channels
   }),
   dispatch => ({
-    listChannels: () => dispatch(listChannels())
+    listChannels: () => dispatch(listChannels()),
+    joinedChannel: (id) => dispatch(joinedChannel(id))
   })
 )
 export default class ChannelList extends Component {
 
   componentWillMount() {
     this.props.listChannels()
+  }
+
+  joining(id) {
+    console.log(id)
+    this.props.joinedChannel(id)
   }
 
   render() {
@@ -24,12 +32,12 @@ export default class ChannelList extends Component {
 
     if (channels && channels.list) {
       listItems = Object.keys(channels.list).map((item)=> {
-        return channels.list[item]
+        return Object.assign(channels.list[item], {key: item})
       })
 
-      content = (<ul>{listItems.map((item)=> {
-        return <li>{item.name}</li>
-      })}</ul>)
+      content = (<div>{listItems.map((item)=> {
+        return <ChannelListItem className={styles.item} joining={this.joining.bind(this, item.id)} {...item}/>
+      })}</div>)
 
     } else {
       content = <p>Lade Channels</p>
