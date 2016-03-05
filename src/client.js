@@ -15,6 +15,8 @@ import ApiClient from './helpers/ApiClient'
 import {Provider} from 'react-redux'
 import {reduxReactRouter, ReduxRouter} from 'redux-router'
 import sendbird from 'sendbird'
+import { CHAT_MESSAGES } from 'redux/actionTypes'
+
 
 import getRoutes from './routes'
 import makeRouteHooksSafe from './helpers/makeRouteHooksSafe'
@@ -33,7 +35,7 @@ const store = createStore(reduxReactRouter, makeRouteHooksSafe(getRoutes), scrol
 
 sendbird.events.onMessageReceived = function eventLog(obj) {
   store.dispatch({
-    type: 'TEST',
+    type: CHAT_MESSAGES,
     payload: obj
   })
 }

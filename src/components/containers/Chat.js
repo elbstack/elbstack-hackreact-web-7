@@ -12,7 +12,7 @@ export default class Chat extends Component {
     const {chat} = this.props
     return (
       <div>{chat.channelId} {chat.messages.map((message)=>{
-        return <div>{message.message}</div>
+        return <div>{message.name}: {message.message}</div>
       })}</div>
     )
   }

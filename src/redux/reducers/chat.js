@@ -7,7 +7,10 @@ export default function chat(state = {messages: []}, action) {
       return {...state, channelId}
     case CHAT_MESSAGES:
       const messages = [...state.messages, ...action.payload.messages.map((message)=>{
-        return message.payload.message
+        return {
+          message: message.payload.message,
+          name: message.payload.user.name
+        }
       })]
       return Object.assign({}, state, {messages})
     default:
