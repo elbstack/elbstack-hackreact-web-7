@@ -4,6 +4,9 @@ import styles from './ChannelList.scss'
 import { listChannels } from '../../redux/actions/channels'
 
 @connect(
+  state => ({
+    channels: state.channels
+  }),
   dispatch => ({
     listChannels: () => dispatch(listChannels())
   })
@@ -15,8 +18,22 @@ export default class ChannelList extends Component {
   }
 
   render() {
+    const { channels } = this.props
+    let content = null
+    let listItems = []
 
-    const content = <p>Lade Channels</p>
+    if (channels && channels.list) {
+      listItems = Object.keys(channels.list).map((item)=> {
+        return channels.list[item]
+      })
+
+      content = (<ul>{listItems.map((item)=> {
+        return <li>{item.name}</li>
+      })}</ul>)
+
+    } else {
+      content = <p>Lade Channels</p>
+    }
 
     return (
       <div className={styles.container}>
