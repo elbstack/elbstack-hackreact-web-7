@@ -6,11 +6,13 @@ import ListChannelsBtn from '../elements/ListChannelsBtn'
 import ChannelList from '../containers/ChannelList'
 import JoinedChannelList from '../elements/JoinedChannelList'
 import IntroText from '../elements/IntroText'
+import Chat from '../containers/chat'
 import styles from './Messenger.scss'
 
 @connect(
   state => ({
-    sendbird: state.sendbird
+    sendbird: state.sendbird,
+    chat: state.chat
   })
 )
 export default class Messenger extends Component {
@@ -25,6 +27,7 @@ export default class Messenger extends Component {
 
   render() {
     const { toggleChannelList } = this.state
+    const { chat } = this.props
     const channelList = toggleChannelList ? <ChannelList /> : null
 
     return (
@@ -37,7 +40,7 @@ export default class Messenger extends Component {
         </div>
         <div className={styles.chat}>
           {channelList}
-          <IntroText />
+          {(chat.channelId) ? <Chat/> : <IntroText />}
         </div>
       </div>
     )

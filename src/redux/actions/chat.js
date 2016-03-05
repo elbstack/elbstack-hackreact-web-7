@@ -1,5 +1,5 @@
 import sendbird from 'sendbird'
-import { CHAT_CONNECTED } from '../actionTypes'
+import { CHAT_MESSAGES, CHAT_CONNECTED } from '../actionTypes'
 
 export function onMessageReceived(store) {
   return (data) => {
@@ -11,6 +11,7 @@ export function onMessageReceived(store) {
 }
 
 export function joinChat(channelUrl) {
+  console.log(channelUrl)
 
   return (dispatch) => {
     sendbird.joinChannel(channelUrl, {
@@ -29,7 +30,12 @@ export function joinChat(channelUrl) {
                 dispatch({
                   type: CHAT_CONNECTED,
                   payload: {
-                    channel_id: data.id,
+                    channel_id: data.id
+                  }
+                })
+                dispatch({
+                  type: CHAT_MESSAGES,
+                  payload: {
                     messages: data3.messages
                   }
                 })
